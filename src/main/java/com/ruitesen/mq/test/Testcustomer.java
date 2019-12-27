@@ -23,7 +23,7 @@ public class Testcustomer {
 	
 	public static void main(String[] args) throws Exception{
 		// 为当前消费者随机取名
-		String name = "customer-"+RandomUtil.randomString(5);
+		final String name = "customer-"+RandomUtil.randomString(5);
 		
 		// 判断服务器是否启动
 		RabbitMQUtil.checkServer();
@@ -54,7 +54,7 @@ public class Testcustomer {
 			public void handleDelivery(String consumerTag, Envelope envelope,
                     AMQP.BasicProperties properties, byte[] body)  throws IOException {
 				String message = new String(body, "UTF-8");
-                System.out.println(" 接收到消息 '" + message + "'");
+                System.out.println(name+" 接收到消息 '" + message + "'");
 			}
 		};
 		//自动回复队列应答 -- RabbitMQ中的消息确认机制
