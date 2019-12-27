@@ -6,7 +6,10 @@ import com.ruitesen.mq.test.TestProducer;
 import com.ruitesen.mq.test.Testcustomer;
 
 /**
- * Unit test for simple App.
+ * 测试单元
+ * 
+ * @author yanganshi
+ *
  */
 public class AppTest {
 	String[] args;
